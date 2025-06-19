@@ -1,0 +1,165 @@
+object FWebService: TFWebService
+  Left = 433
+  Height = 370
+  Top = 170
+  Width = 446
+  BorderIcons = [biSystemMenu, biMinimize]
+  Caption = 'Free Pascal - PHP - MariaDB'
+  ClientHeight = 370
+  ClientWidth = 446
+  Position = poScreenCenter
+  LCLVersion = '4.0.0.4'
+  OnCreate = FormCreate
+  object BGetData: TButton
+    Left = 8
+    Height = 25
+    Top = 8
+    Width = 153
+    Caption = 'Get Data'
+    TabOrder = 0
+    OnClick = BGetDataClick
+  end
+  object GridContact: TStringGrid
+    Left = 0
+    Height = 189
+    Top = 181
+    Width = 446
+    Align = alBottom
+    ColCount = 4
+    Columns = <    
+      item
+        Title.Caption = 'ID'
+        Width = 75
+      end    
+      item
+        Title.Caption = 'Nama'
+        Width = 200
+      end    
+      item
+        Title.Caption = 'Nomor HP'
+        Width = 200
+      end>
+    Flat = True
+    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goRowSelect, goSmoothScroll]
+    TabOrder = 1
+    OnSelectCell = GridContactSelectCell
+  end
+  object GroupUploadDownload: TGroupBox
+    Left = 8
+    Height = 128
+    Top = 40
+    Width = 153
+    Caption = 'Upload and Download'
+    ClientHeight = 108
+    ClientWidth = 149
+    TabOrder = 2
+    object BUpload: TButton
+      Left = 8
+      Height = 25
+      Top = 40
+      Width = 131
+      Caption = 'Upload'
+      TabOrder = 0
+      OnClick = BUploadClick
+    end
+    object BDownload: TButton
+      Left = 8
+      Height = 25
+      Top = 72
+      Width = 131
+      Caption = 'Download'
+      TabOrder = 1
+      OnClick = BDownloadClick
+    end
+    object EFile: TEdit
+      Left = 8
+      Height = 23
+      Top = 8
+      Width = 48
+      Enabled = False
+      TabOrder = 2
+    end
+    object BBrowse: TButton
+      Left = 64
+      Height = 25
+      Top = 8
+      Width = 75
+      Caption = 'Browse...'
+      TabOrder = 3
+      OnClick = BBrowseClick
+    end
+  end
+  object GroupInsertUpdateDelete: TGroupBox
+    Left = 176
+    Height = 161
+    Top = 8
+    Width = 256
+    Caption = 'Insert, Update and Delete'
+    ClientHeight = 141
+    ClientWidth = 252
+    TabOrder = 3
+    object BUpdate: TButton
+      Left = 88
+      Height = 25
+      Top = 104
+      Width = 75
+      Caption = 'Update'
+      TabOrder = 0
+      OnClick = BUpdateClick
+    end
+    object BDelete: TButton
+      Left = 168
+      Height = 25
+      Top = 104
+      Width = 75
+      Caption = 'Delete'
+      TabOrder = 1
+      OnClick = BDeleteClick
+    end
+    object BSimpan: TButton
+      Left = 10
+      Height = 25
+      Top = 104
+      Width = 75
+      Caption = 'Simpan'
+      TabOrder = 2
+      OnClick = BSimpanClick
+    end
+    object EID: TLabeledEdit
+      Left = 9
+      Height = 23
+      Top = 24
+      Width = 63
+      EditLabel.Height = 15
+      EditLabel.Width = 63
+      EditLabel.Caption = 'ID'
+      Enabled = False
+      TabOrder = 3
+    end
+    object ENoHP: TLabeledEdit
+      Left = 80
+      Height = 23
+      Top = 24
+      Width = 163
+      EditLabel.Height = 15
+      EditLabel.Width = 163
+      EditLabel.Caption = 'Nomor HP'
+      NumbersOnly = True
+      TabOrder = 4
+    end
+    object ENama: TLabeledEdit
+      Left = 10
+      Height = 23
+      Top = 72
+      Width = 232
+      EditLabel.Height = 15
+      EditLabel.Width = 232
+      EditLabel.Caption = 'Nama'
+      TabOrder = 5
+    end
+  end
+  object OpenFile: TOpenDialog
+    Left = 152
+    Top = 232
+  end
+end
